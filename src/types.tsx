@@ -22,3 +22,5 @@ export type Order={
     orderItems:OrderItem[];
     _id:string;
 };
+
+export type Theme="light" | "dark"

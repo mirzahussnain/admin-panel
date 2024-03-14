@@ -1,16 +1,18 @@
 .dashboard-app-container{
-    background-color: white;
+    background-color:  var(--light-bg-color-secondary);
     padding: 4rem;
     margin-left: 1rem;
-
+    color: var(--light-heading-color);
     >section{
         @include flex(column,center,center,2rem);
         height: 100%;
+        
         .stopwatch{
             >h2{
                 font-size: 2rem;
                 font-weight: 300;
                 text-align: center;
+                
             }
             >button{
                 padding: 1rem 2rem;
@@ -74,7 +76,7 @@
             }
             >fieldset{
                 padding: 1rem;
-                border:1px solid rgba(0,0,0,0.359);
+                border:1px solid var(--light-border-bottom-color);
                 border-radius: 5px;
                 @include flex(row,center,center,0);
                 flex-wrap: wrap;

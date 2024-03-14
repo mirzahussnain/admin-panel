@@ -8,13 +8,30 @@
     font-family: Inter,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.5;
     font-weight: 400;
+    --light-bg-color:rgb(247,247,247);
+    --light-bg-color-secondary:white;
+    --light-link-color:rgba(0,0,0,0.825);
+    --light-heading-color:#0000009e;
+    --light-table-row-color:rgba(0,0,0,0.093);
+    --light-border-bottom-color:rgba(0, 0, 0, 0.37);
+    --light-theme-toggler-color:black;
 }
+body[data-theme='dark']{
+    --light-bg-color:rgb(36, 34, 34);
+    --light-bg-color-secondary:black;
+    --light-link-color:rgba(255, 255, 255, 0.825);
+    --light-heading-color:#ebe8e89e;
+    --light-table-row-color:rgba(227, 226, 226, 0.093);
+    --light-border-bottom-color:rgba(227, 204, 204, 0.37);
+    --light-theme-toggler-color:white;
 
+}
 
 *{
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
 }
 
 
@@ -39,10 +56,10 @@ a{
 .adminContainer{
     @include grid(1fr 4fr,2rem);
     height: 100vh;
-    background-color: rgb(247,247,247);
+    background-color: var(--light-bg-color);
     >aside{
         width:100% ;
-        background-color: white;
+        background-color:var( --light-bg-color-secondary);
         padding: 1rem;
         z-index: 10;
         overflow-y: auto;
@@ -54,6 +71,7 @@ a{
            height: fit-content;
            >h2{
             font-size: 2rem;
+            color:var(--light-heading-color);
            }
            >button{
             @include square(3rem);
@@ -63,6 +81,7 @@ a{
             cursor: pointer;
             padding:0.5rem;
             background-color:transparent;
+            color:var(--light-heading-color);
            }
         }
 
@@ -82,7 +101,7 @@ a{
                     border-radius: 10px;
 
                     a{
-                        color: rgba(0,0,0,0.825);
+                        color: var(--light-link-color);
                         @include flex(row,unset)
                     }
                 }
@@ -94,6 +113,7 @@ a{
 .table{
     border-collapse: collapse;
     width: 100%;
+    
     th,
     td{
         padding: 8px;
@@ -102,7 +122,7 @@ a{
     }
     th{
         font-weight: bold;
-        color: #0000009e;
+        color: var(--light-heading-color);
         font-size: 1.1rem;
         font-weight: 400;
         padding: 2rem 1rem;
@@ -111,10 +131,11 @@ a{
 
     tbody{
         tr{
-            box-shadow: 0px 1px 1px rgba(0,0,0,0.093);
+            box-shadow: 0px 1px 1px var(--light-table-row-color);
         }
         td{
             padding: 1rem;
+            color: var(--light-heading-color);;
         }
         img{
             width: 4rem;
@@ -154,6 +175,7 @@ a{
 .table-pagination{
     @include flex;
     padding: 2rem;
+    color: var(--light-heading-color);
     >button{
         padding: 0.5rem 1rem;
         border: none;

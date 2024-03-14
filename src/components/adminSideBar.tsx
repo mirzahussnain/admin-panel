@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react";
 import { IconType } from "react-icons";
 import { AiFillFile } from "react-icons/ai";
 import { CiSun } from "react-icons/ci";
@@ -7,6 +7,8 @@ import { HiMenuAlt4 } from "react-icons/hi";
 import { IoIosPeople } from "react-icons/io";
 import { RiCoupon3Fill, RiDashboardFill, RiShoppingBag3Fill } from "react-icons/ri";
 import { Link, Location, useLocation } from "react-router-dom";
+import { IoMoonOutline } from "react-icons/io5";
+import { useTheme } from "../context/themeContext";
 
 interface sideNavItems {
   heading: string;
@@ -17,8 +19,8 @@ interface sideNavItems {
 }
 
 const AdminSideBar = () => {
+  const {theme,toggleTheme}=useTheme();
   const location = useLocation();
-
   const [showModal,setShowModal]=useState<boolean>(false);
   const [phoneActive,setPhoneActive]=useState<boolean>(window.innerWidth<1100)
   
@@ -50,7 +52,7 @@ const AdminSideBar = () => {
      }:{}}>
       <div className="logo-toggle">
       <h2>Logo.</h2>
-      <button><CiSun/></button>
+      <button onClick={()=>toggleTheme()}>{theme==='dark'?<CiSun/>:<IoMoonOutline/>}</button>
       </div>
 
       {/*Dashboard*/}
@@ -147,12 +149,12 @@ const SideNavDivs = ({ heading, divData, location,phoneActive,setShowModal }: si
     <div>
       <h5>{heading}</h5>
       <ul>
-        {divData.map((data) => (
-          <li
+        {divData.map((data,index) => (
+          <li key={`${data}-${index}`}
             style={{
               backgroundColor: location.pathname.includes(data.url)
                 ? "rgba(0,115,255,0.1)"
-                : "white",
+                : "var(--light-bg-color)",
             }}
           >
             <Link
@@ -160,7 +162,7 @@ const SideNavDivs = ({ heading, divData, location,phoneActive,setShowModal }: si
               style={{
                 color: location.pathname.includes(data.url)
                   ? "rgb(0,115,255)"
-                  : "black",
+                  : "var(--light-heading-color)",
               }}
             >
               <data.Icon />
