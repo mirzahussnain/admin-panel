@@ -5,7 +5,7 @@
     height: 4rem;
     @include flex(row, unset);
     padding: 0 1rem;
-    border-bottom: 1px solid var(--light-border-bottom-color);
+    border-bottom: 1px solid var(--border-bottom-color);
     > input {
       margin-right: auto;
       outline: none;
@@ -16,7 +16,7 @@
     > svg {
       font-size: 1.2rem;
       opacity: 0.7;
-      color:var(--light-heading-color);
+      color:var(--heading-color);
     }
     > img {
       @include square(2rem);
@@ -29,19 +29,19 @@
 
     .widget {
       width: 16rem;
-      background-color: var(--light-bg-color-secondary);
-      box-shadow: 0 0 10px var(--light-bg-color-secondary);
+      background-color: var(--bg-color-secondary);
+      box-shadow: 0 0 10px var(--bg-color-secondary);
       padding: 2rem;
       @include flex(row, space-between, stretch, 0);
       .widget-info {
         > p {
           opacity: 0.7;
           font-size: 0.8rem;
-          color:var(--light-heading-color);
+          color:var(--heading-color);
         }
         > h4 {
           font-size: 1.5rem;
-          color:var(--light-heading-color);
+          color:var(--heading-color);
         }
         > span {
           @include flex(row, unset, center, 0.2rem);
@@ -60,7 +60,7 @@
           content: "";
           position: absolute;
           @include square(4rem);
-          background-color: var(--light-bg-color);
+          background-color: var(--bg-color);
           border-radius: 100%;
         }
         span {
@@ -74,7 +74,7 @@
     @include flex(row, unset, unset, 2rem);
     padding: 0 2rem;
     > div {
-      background-color: var(--light-bg-color-secondary);
+      background-color: var(--bg-color-secondary);
       border-radius: 10px;
     }
 
@@ -109,7 +109,7 @@
         width: 100%;
         @include flex(row, space-between);
         padding: 1rem;
-        color: var(--light-heading-color);
+        color: var(--heading-color);
         > h5 {
           letter-spacing: 1px;
           font-weight: 300;
@@ -138,7 +138,7 @@
     margin-left: 2rem;
     margin-top:2rem;
     >div{
-        background-color: var(--light-bg-color-secondary);
+        background-color: var(--bg-color-secondary);
         box-shadow:0px 10px 10px rgba(0,0,0.132);
         border-radius:10px;
     }
@@ -158,7 +158,7 @@
         >p{
             @include posCenter;
             font-size:2rem;
-            color:var(--light-heading-color);
+            color:var(--heading-color);
         }
     }
     .transaction-box{

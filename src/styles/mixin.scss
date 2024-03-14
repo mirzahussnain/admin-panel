@@ -5,7 +5,7 @@
   letter-spacing: $spacing;
   font-weight: $weight;
   text-transform: $case;
-  color:var(--light-heading-color)
+  color:var(--heading-color)
 }
 
 @mixin flex(

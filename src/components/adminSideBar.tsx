@@ -154,7 +154,7 @@ const SideNavDivs = ({ heading, divData, location,phoneActive,setShowModal }: si
             style={{
               backgroundColor: location.pathname.includes(data.url)
                 ? "rgba(0,115,255,0.1)"
-                : "var(--light-bg-color)",
+                : "var(--bg-color)",
             }}
           >
             <Link
@@ -162,7 +162,7 @@ const SideNavDivs = ({ heading, divData, location,phoneActive,setShowModal }: si
               style={{
                 color: location.pathname.includes(data.url)
                   ? "rgb(0,115,255)"
-                  : "var(--light-heading-color)",
+                  : "var(--heading-color)",
               }}
             >
               <data.Icon />

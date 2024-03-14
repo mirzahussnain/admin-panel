@@ -8,22 +8,22 @@
     font-family: Inter,system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     line-height: 1.5;
     font-weight: 400;
-    --light-bg-color:rgb(247,247,247);
-    --light-bg-color-secondary:white;
-    --light-link-color:rgba(0,0,0,0.825);
-    --light-heading-color:#0000009e;
-    --light-table-row-color:rgba(0,0,0,0.093);
-    --light-border-bottom-color:rgba(0, 0, 0, 0.37);
-    --light-theme-toggler-color:black;
+    --bg-color:rgb(247,247,247);
+    --bg-color-secondary:white;
+    --link-color:rgba(0,0,0,0.825);
+    --heading-color:#0000009e;
+    --table-row-color:rgba(0,0,0,0.093);
+    --border-bottom-color:rgba(0, 0, 0, 0.37);
+    --theme-toggler-color:black;
 }
 body[data-theme='dark']{
-    --light-bg-color:rgb(36, 34, 34);
-    --light-bg-color-secondary:black;
-    --light-link-color:rgba(255, 255, 255, 0.825);
-    --light-heading-color:#ebe8e89e;
-    --light-table-row-color:rgba(227, 226, 226, 0.093);
-    --light-border-bottom-color:rgba(227, 204, 204, 0.37);
-    --light-theme-toggler-color:white;
+    --bg-color:rgb(36, 34, 34);
+    --bg-color-secondary:black;
+    --link-color:rgba(255, 255, 255, 0.825);
+    --heading-color:#ebe8e89e;
+    --table-row-color:rgba(227, 226, 226, 0.093);
+    --border-bottom-color:rgba(227, 204, 204, 0.37);
+    --theme-toggler-color:white;
 
 }
 
@@ -56,10 +56,10 @@ a{
 .adminContainer{
     @include grid(1fr 4fr,2rem);
     height: 100vh;
-    background-color: var(--light-bg-color);
+    background-color: var(--bg-color);
     >aside{
         width:100% ;
-        background-color:var( --light-bg-color-secondary);
+        background-color:var( --bg-color-secondary);
         padding: 1rem;
         z-index: 10;
         overflow-y: auto;
@@ -71,7 +71,7 @@ a{
            height: fit-content;
            >h2{
             font-size: 2rem;
-            color:var(--light-heading-color);
+            color:var(--heading-color);
            }
            >button{
             @include square(3rem);
@@ -81,7 +81,7 @@ a{
             cursor: pointer;
             padding:0.5rem;
             background-color:transparent;
-            color:var(--light-heading-color);
+            color:var(--heading-color);
            }
         }
 
@@ -101,7 +101,7 @@ a{
                     border-radius: 10px;
 
                     a{
-                        color: var(--light-link-color);
+                        color: var(--link-color);
                         @include flex(row,unset)
                     }
                 }
@@ -122,7 +122,7 @@ a{
     }
     th{
         font-weight: bold;
-        color: var(--light-heading-color);
+        color: var(--heading-color);
         font-size: 1.1rem;
         font-weight: 400;
         padding: 2rem 1rem;
@@ -131,11 +131,11 @@ a{
 
     tbody{
         tr{
-            box-shadow: 0px 1px 1px var(--light-table-row-color);
+            box-shadow: 0px 1px 1px var(--table-row-color);
         }
         td{
             padding: 1rem;
-            color: var(--light-heading-color);;
+            color: var(--heading-color);;
         }
         img{
             width: 4rem;
@@ -175,7 +175,7 @@ a{
 .table-pagination{
     @include flex;
     padding: 2rem;
-    color: var(--light-heading-color);
+    color: var(--heading-color);
     >button{
         padding: 0.5rem 1rem;
         border: none;
