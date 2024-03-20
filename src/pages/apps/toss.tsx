@@ -1,9 +1,9 @@
-import { useState } from "react"
-import { AdminSideBar } from "../../components"
+import { useState } from "react";
+import { AdminSideBar } from "../../components";
 
 const Toss = () => {
     const [angle,setAngle]=useState<number>(0);
-    const [result,setResult]=useState<string>();
+    const [,setResult]=useState<string>();
   
   const flipCoin=()=>{
    
