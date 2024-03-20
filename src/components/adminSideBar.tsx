@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { IconType } from "react-icons";
 import { AiFillFile } from "react-icons/ai";
 import { CiSun } from "react-icons/ci";
